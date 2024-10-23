@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Octal Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="button1">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Binary to Octal Converter</h2>
+            <form id="converter-form">
+                <label for="binary-input">Enter Binary Number:</label>
+                <input type="text" id="binary-input" placeholder="e.g., 1010">
+                <button type="button" onclick="convertToOctal()">Convert</button>
+            </form>
+
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anonymous Base Converter. Developed by Minhal Raza and Ali Rooman. All rights reserved.</p>
+    
+</footer>
+
+    <script>
+        function convertToOctal() {
+            const binary = document.getElementById('binary-input').value;
+            const decimal = parseInt(binary, 2);
+            const octal = decimal.toString(8);
+            document.getElementById('result').innerText = `Octal: ${octal}`;
+        }
+                   // Add event listener for pressing "Enter"
+    document.getElementById('binary-input').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();  // Prevent form submission
+            convertToOctal();  // Call the conversion function
+        }
+    });
+    </script>
+</body>
+</html>

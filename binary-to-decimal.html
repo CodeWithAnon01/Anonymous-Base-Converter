@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Decimal Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="button1">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Binary to Decimal Converter</h2>
+        <form id="converter-form">
+            <label for="binary-input">Enter Binary Number:</label>
+            <input type="text" id="binary-input" placeholder="1010">
+            <button type="button" onclick="convertToDecimal()">Convert</button>
+        </form>
+
+        <p id="result"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anonymous Base Converter. Developed by Minhal Raza and Ali Rooman. All rights reserved.</p>
+    
+</footer>
+
+    
+</body>
+<script>
+function convertToDecimal() {
+    const binary = document.getElementById('binary-input').value;
+    const decimal = parseInt(binary, 2);
+    document.getElementById('result').innerText = `Decimal: ${decimal}`;
+}
+document.getElementById('binary-input').addEventListener('keydown', function(event) {
+if (event.key === 'Enter') {
+    event.preventDefault();  // Prevent form submission
+    convertToDecimal();  // Call the conversion function
+}
+});
+</script>
+<script src="script.js"></script>
+</html>

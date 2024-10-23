@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octal to Decimal Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="button1">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Octal to Decimal Converter</h2>
+            <form id="converter-form">
+                <label for="octal-input">Enter Octal Number:</label>
+                <input type="text" id="octal-input" placeholder="e.g., 12">
+                <button type="button" onclick="convertToDecimal()">Convert</button>
+            </form>
+
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anonymous Base Converter. Developed by Minhal Raza and Ali Rooman. All rights reserved.</p>
+    
+</footer>
+
+    <script>
+        function convertToDecimal() {
+            const octal = document.getElementById('octal-input').value;
+            const decimal = parseInt(octal, 8);
+            document.getElementById('result').innerText = `Decimal: ${decimal}`;
+        }
+        document.getElementById('octal-input').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();  // Prevent form submission
+            convertToDecimal();  // Call the conversion function
+        }
+    });
+    </script>
+</body>
+</html>
